@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/dormitoryrepair_system?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss  #时间戳统一转换为指定格式
+    time-zone: GMT+8  # 时区修改为东8区
+  servlet:
+    multipart:
+      enabled: true # 开启文件上传
+      file-size-threshold: 2KB # 文件写入磁盘的阈值
+      max-file-size: 100MB
+      max-request-size: 215MB # 最大请求值大小
+  web:
+    resources:
+      static-locations: file:E:\Program Files\JetBrains\IdeaProjects\work\vaccinum\src\main\resources\file,classpath:/META-INF/resources/, classpath:/resources/, classpath:/static/, classpath:/templates/, classpath:/public/
+server:
+  port: 8088
+  tomcat:
+    uri-encoding: UTF-8
+  servlet:
+    encoding:
+      charset: UTF-8
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
